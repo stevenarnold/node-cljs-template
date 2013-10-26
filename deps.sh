@@ -16,5 +16,6 @@ else
   tar zxvf $FILE
 
   ln -s $FILENAME/nw ./nw
+  echo "Node-webkit downloaded, run as lib/nw"
 fi
 
