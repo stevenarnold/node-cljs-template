@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd cljs
+cd src-cljs
 lein cljsbuild auto
