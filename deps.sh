@@ -17,5 +17,7 @@ else
 
   ln -s $FILENAME/nw ./nw
   echo "Node-webkit downloaded, run as lib/nw"
+  cd ..
 fi
 
+bower install

@@ -2,6 +2,7 @@
 /lib
 /classes
 /checkouts
+/src/vendor
 pom.xml
 *.jar
 *.class
