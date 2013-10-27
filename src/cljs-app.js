@@ -377,6 +377,13 @@ goog.base = function(a, b, c) {
 goog.scope = function(a) {
   a.call(goog.global)
 };
+goog.debug = {};
+goog.debug.Error = function(a) {
+  Error.captureStackTrace ? Error.captureStackTrace(this, goog.debug.Error) : this.stack = Error().stack || "";
+  a && (this.message = String(a))
+};
+goog.inherits(goog.debug.Error, Error);
+goog.debug.Error.prototype.name = "CustomError";
 goog.string = {};
 goog.string.Unicode = {NBSP:"\u00a0"};
 goog.string.startsWith = function(a, b) {
@@ -708,13 +715,6 @@ goog.string.parseInt = function(a) {
   isFinite(a) && (a = String(a));
   return goog.isString(a) ? /^\s*-?0x/i.test(a) ? parseInt(a, 16) : parseInt(a, 10) : NaN
 };
-goog.debug = {};
-goog.debug.Error = function(a) {
-  Error.captureStackTrace ? Error.captureStackTrace(this, goog.debug.Error) : this.stack = Error().stack || "";
-  a && (this.message = String(a))
-};
-goog.inherits(goog.debug.Error, Error);
-goog.debug.Error.prototype.name = "CustomError";
 goog.asserts = {};
 goog.asserts.ENABLE_ASSERTS = goog.DEBUG;
 goog.asserts.AssertionError = function(a, b) {
@@ -3506,16 +3506,16 @@ cljs.core.with_meta = function with_meta(b, c) {
     c && (b ? (c = (c = b.cljs$lang$protocol_mask$partition0$ & 262144) ? c : b.cljs$core$IWithMeta$, c = c ? !0 : b.cljs$lang$protocol_mask$partition0$ ? !1 : cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, b)) : c = cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, b), c = !c);
     return c
   }() ? with_meta.call(null, function() {
-    "undefined" === typeof cljs.core.t4930 && (cljs.core.t4930 = {}, cljs.core.t4930 = function(b, c, f, g) {
+    "undefined" === typeof cljs.core.t4948 && (cljs.core.t4948 = {}, cljs.core.t4948 = function(b, c, f, g) {
       this.meta = b;
       this.o = c;
       this.with_meta = f;
-      this.meta4931 = g;
+      this.meta4949 = g;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393217
-    }, cljs.core.t4930.cljs$lang$type = !0, cljs.core.t4930.cljs$lang$ctorStr = "cljs.core/t4930", cljs.core.t4930.cljs$lang$ctorPrWriter = function(b, c, f) {
-      return cljs.core._write.call(null, c, "cljs.core/t4930")
-    }, cljs.core.t4930.prototype.call = function() {
+    }, cljs.core.t4948.cljs$lang$type = !0, cljs.core.t4948.cljs$lang$ctorStr = "cljs.core/t4948", cljs.core.t4948.cljs$lang$ctorPrWriter = function(b, c, f) {
+      return cljs.core._write.call(null, c, "cljs.core/t4948")
+    }, cljs.core.t4948.prototype.call = function() {
       var b = function(b, c) {
         return cljs.core.apply.call(null, b.o, c)
       }, c = function(c, e) {
@@ -3532,17 +3532,17 @@ cljs.core.with_meta = function with_meta(b, c) {
       };
       c.cljs$core$IFn$_invoke$arity$variadic = b;
       return c
-    }(), cljs.core.t4930.prototype.apply = function(b, c) {
+    }(), cljs.core.t4948.prototype.apply = function(b, c) {
       b = this;
       return b.call.apply(b, [b].concat(c.slice()))
-    }, cljs.core.t4930.prototype.cljs$core$Fn$ = !0, cljs.core.t4930.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-      return this.meta4931
-    }, cljs.core.t4930.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-      return new cljs.core.t4930(this.meta, this.o, this.with_meta, c)
-    }, cljs.core.__GT_t4930 = function(b, c, f, g) {
-      return new cljs.core.t4930(b, c, f, g)
+    }, cljs.core.t4948.prototype.cljs$core$Fn$ = !0, cljs.core.t4948.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+      return this.meta4949
+    }, cljs.core.t4948.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+      return new cljs.core.t4948(this.meta, this.o, this.with_meta, c)
+    }, cljs.core.__GT_t4948 = function(b, c, f, g) {
+      return new cljs.core.t4948(b, c, f, g)
     });
-    return new cljs.core.t4930(c, b, with_meta, null)
+    return new cljs.core.t4948(c, b, with_meta, null)
   }(), c) : cljs.core._with_meta.call(null, b, c)
 };
 cljs.core.meta = function(a) {
@@ -13760,11 +13760,39 @@ cljs.nodejs.process = process;
 cljs.core.string_print = cljs.nodejs.require.call(null, "util").print;
 var cljs_app = {core:{}};
 cljs_app.core.gui = cljs.nodejs.require.call(null, "nw.gui");
-cljs_app.core.Tray = cljs_app.core.gui.Tray;
-cljs_app.core.tray = new cljs_app.core.Tray(cljs.core.clj__GT_js.call(null, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "title", "title", 1124275658), "Tray"], !0)));
-cljs_app.core.Menu = cljs_app.core.gui.Menu;
-cljs_app.core.menu = new cljs_app.core.Menu;
-cljs_app.core.MenuItem = cljs_app.core.gui.MenuItem;
-cljs_app.core.menu.append(new cljs_app.core.MenuItem(cljs.core.clj__GT_js.call(null, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "type", "type", 1017479852), "checkbox", new cljs.core.Keyword(null, "label", "label", 1116631654), "box1"], !0))));
-cljs_app.core.tray.menu = cljs_app.core.menu;
+cljs_app.core.__GT_Tray = function(a, b) {
+  var c;
+  c = new cljs_app.core.gui.Tray(cljs.core.clj__GT_js.call(null, b));
+  c.menu = a;
+  return c
+};
+cljs_app.core.__GT_MenuItem = function(a) {
+  return new cljs_app.core.gui.MenuItem(cljs.core.clj__GT_js.call(null, a))
+};
+cljs_app.core.__GT_Menu = function() {
+  return new cljs_app.core.gui.Menu
+};
+cljs_app.core.system_tray = function() {
+  var a = function(a, b) {
+    return cljs_app.core.__GT_Tray.call(null, cljs.core.reduce.call(null, function(a, b) {
+      a.append(cljs_app.core.__GT_MenuItem.call(null, b));
+      return a
+    }, cljs_app.core.__GT_Menu.call(null), b), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "title", "title", 1124275658), a], !0))
+  }, b = function(b, d) {
+    var e = null;
+    1 < arguments.length && (e = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0));
+    return a.call(this, b, e)
+  };
+  b.cljs$lang$maxFixedArity = 1;
+  b.cljs$lang$applyTo = function(b) {
+    var d = cljs.core.first(b);
+    b = cljs.core.rest(b);
+    return a(d, b)
+  };
+  b.cljs$core$IFn$_invoke$arity$variadic = a;
+  return b
+}();
+cljs_app.core.system_tray.call(null, "Nodify", cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "type", "type", 1017479852), "checkbox", new cljs.core.Keyword(null, "label", "label", 1116631654), "box1"], !0), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "label", "label", 1116631654), "Exit", new cljs.core.Keyword(null, "click", "click", 1108654330), function() {
+  return cljs_app.core.gui.App.quit()
+}], !0));
 console.log("WATT");
