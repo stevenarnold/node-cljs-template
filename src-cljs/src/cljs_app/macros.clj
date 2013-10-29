@@ -7,4 +7,9 @@
     `(let [obj# ~obj]
        (new obj# ~@arg-forms))))
  
-
+(defmacro when-node
+  [& body]
+  `(when (= "node" (some-> ~'(this-as x x)
+                           (aget "process")
+                           (aget "title")))
+     ~@body))
