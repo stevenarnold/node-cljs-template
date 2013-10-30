@@ -3506,16 +3506,16 @@ cljs.core.with_meta = function with_meta(b, c) {
     c && (b ? (c = (c = b.cljs$lang$protocol_mask$partition0$ & 262144) ? c : b.cljs$core$IWithMeta$, c = c ? !0 : b.cljs$lang$protocol_mask$partition0$ ? !1 : cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, b)) : c = cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, b), c = !c);
     return c
   }() ? with_meta.call(null, function() {
-    "undefined" === typeof cljs.core.t10762 && (cljs.core.t10762 = {}, cljs.core.t10762 = function(b, c, f, g) {
+    "undefined" === typeof cljs.core.t10919 && (cljs.core.t10919 = {}, cljs.core.t10919 = function(b, c, f, g) {
       this.meta = b;
       this.o = c;
       this.with_meta = f;
-      this.meta10763 = g;
+      this.meta10920 = g;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393217
-    }, cljs.core.t10762.cljs$lang$type = !0, cljs.core.t10762.cljs$lang$ctorStr = "cljs.core/t10762", cljs.core.t10762.cljs$lang$ctorPrWriter = function(b, c, f) {
-      return cljs.core._write.call(null, c, "cljs.core/t10762")
-    }, cljs.core.t10762.prototype.call = function() {
+    }, cljs.core.t10919.cljs$lang$type = !0, cljs.core.t10919.cljs$lang$ctorStr = "cljs.core/t10919", cljs.core.t10919.cljs$lang$ctorPrWriter = function(b, c, f) {
+      return cljs.core._write.call(null, c, "cljs.core/t10919")
+    }, cljs.core.t10919.prototype.call = function() {
       var b = function(b, c) {
         return cljs.core.apply.call(null, b.o, c)
       }, c = function(c, e) {
@@ -3532,17 +3532,17 @@ cljs.core.with_meta = function with_meta(b, c) {
       };
       c.cljs$core$IFn$_invoke$arity$variadic = b;
       return c
-    }(), cljs.core.t10762.prototype.apply = function(b, c) {
+    }(), cljs.core.t10919.prototype.apply = function(b, c) {
       b = this;
       return b.call.apply(b, [b].concat(c.slice()))
-    }, cljs.core.t10762.prototype.cljs$core$Fn$ = !0, cljs.core.t10762.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-      return this.meta10763
-    }, cljs.core.t10762.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-      return new cljs.core.t10762(this.meta, this.o, this.with_meta, c)
-    }, cljs.core.__GT_t10762 = function(b, c, f, g) {
-      return new cljs.core.t10762(b, c, f, g)
+    }, cljs.core.t10919.prototype.cljs$core$Fn$ = !0, cljs.core.t10919.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+      return this.meta10920
+    }, cljs.core.t10919.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+      return new cljs.core.t10919(this.meta, this.o, this.with_meta, c)
+    }, cljs.core.__GT_t10919 = function(b, c, f, g) {
+      return new cljs.core.t10919(b, c, f, g)
     });
-    return new cljs.core.t10762(c, b, with_meta, null)
+    return new cljs.core.t10919(c, b, with_meta, null)
   }(), c) : cljs.core._with_meta.call(null, b, c)
 };
 cljs.core.meta = function(a) {
@@ -13790,5 +13790,25 @@ cljs.core._EQ_.call(null, "node", function() {
   return b
 }(), cljs_app.node_bits.system_tray.call(null, "Nodify", cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "type", "type", 1017479852), "checkbox", new cljs.core.Keyword(null, "label", "label", 1116631654), "box1"], !0), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "label", "label", 1116631654), "Exit", new cljs.core.Keyword(null, "click", "click", 1108654330), function() {
   return cljs_app.node_bits.gui.App.quit()
-}], !0)));
+}], !0)), cljs_app.node_bits.window = cljs_app.node_bits.gui.Window.get(), cljs_app.node_bits.window.show());
 cljs_app.core = {};
+cljs_app.core.log = function() {
+  var a = function(a) {
+    return console.log(a)
+  }, b = function(b) {
+    var d = null;
+    0 < arguments.length && (d = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0), 0));
+    return a.call(this, d)
+  };
+  b.cljs$lang$maxFixedArity = 0;
+  b.cljs$lang$applyTo = function(b) {
+    b = cljs.core.seq(b);
+    return a(b)
+  };
+  b.cljs$core$IFn$_invoke$arity$variadic = a;
+  return b
+}();
+var G__10555_10556 = angular.module("myApp", []);
+G__10555_10556.controller("Test", ["$scope", function(a) {
+  return a.Hello = "World"
+}]);

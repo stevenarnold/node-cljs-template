@@ -2,10 +2,26 @@
 <html>
   <head>
     <title>Hello World!</title>
+    <link href="vendor/bootstrap-css/css/bootstrap.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <script src="vendor/angular/angular.js"></script>
     <script src="cljs-app.js"></script>
   </head>
-  <body>
-    <h1>Hello FWorld!</h1>
-    We are using node.js <script>document.write(process.version)</script>.
+  <body ng-app="myApp">
+    <div class="outer-border">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+
+          <a class="navbar-brand" href="#" ng-controller="Test">{{ Hello }}</a>
+        </div>
+      </nav>
+    </div>
   </body>
 </html>

@@ -33,4 +33,9 @@
   {:type "checkbox" :label "box1"}
   {:label "Exit" :click #(.quit (.-App gui))})
 
+
+ ;; keep it hidden in package.json, show the window once it's fully loaded.
+ (def window (.get (.-Window gui)))
+ (.show window)
+
  )
